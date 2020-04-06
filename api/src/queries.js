@@ -36,7 +36,7 @@ const redisClient = redis.createClient({
 
 // Queries
 const getUsers = (request, response) => {
-  pool.query('SELECT * FROM users ORDER BY id ASC', (error, results) => {
+  pgClient.query('SELECT * FROM users ORDER BY id ASC', (error, results) => {
     if (error) {
       throw error;
     }
@@ -47,7 +47,7 @@ const getUsers = (request, response) => {
 const createUser = (request, response) => {
   const { name, email } = request.body;
 
-  pool.query(
+  pgClient.query(
     'INSERT INTO users (name, email) VALUES ($1, $2)',
     [name, email],
     (error, results) => {
