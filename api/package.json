@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint .",
     "dev": "nodemon src/app.js",
-    "start": "node src/app.js",
+    "start": "nodemon src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,6 +23,9 @@
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "express-jwt": "^5.3.1",
+    "express-jwt-authz": "^2.3.1",
+    "jwks-rsa": "^1.7.0",
     "pg": "^8.0.0",
     "redis": "^3.0.2"
   },
