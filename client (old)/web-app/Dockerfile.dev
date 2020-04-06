@@ -1,0 +1,10 @@
+# Get base image from community image repository
+FROM flutter:alpine
+
+# Set working directory to be used in the container, and,
+# copy package.json into the container
+# so that 'npm install' only runs when package.json is changed
+WORKDIR '/app'
+
+# Set default run command
+CMD ["npm", "start"]

@@ -78,20 +78,15 @@ services:
   #-----------------------------
   # Add client container
   client:
-    ## Workaround for latest version create react app unexpected crashing
-    stdin_open: true
-
     ## passing custom Dockerfile and context information
     build:
-      context: ./client/web-app
+      context: ./client
       dockerfile: Dockerfile.dev
 
     ## creating references of container folders to local folders
     volumes:
-      # Create placeholder folder so npm run doesn't fail.
-      - /app/node_modules
       # Reference server directory to container working directory
-      - ./client/web-app:/app
+      - ./client:/app
 
     ## Set restart policy
     restart: unless-stopped
